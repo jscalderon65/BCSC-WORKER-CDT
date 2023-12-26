@@ -18,7 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "docker:rabbitmq": "docker-compose -f rabbitmq-compose.yaml up -d"
+    "docker:rabbitmq": "docker-compose -f rabbitmq-compose.yaml up -d",
+    "commit": "cz"
   },
   "dependencies": {
     "@faker-js/faker": "^8.3.1",
