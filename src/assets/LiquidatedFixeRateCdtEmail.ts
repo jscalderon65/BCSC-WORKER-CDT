@@ -1,0 +1,81 @@
+export const sendGridTemplate = (
+  grossInterest,
+  withholdingTax,
+  remainingValue,
+  clientName,
+) => `<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Correo Electrónico</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #fefffe;
+      }
+
+      .header-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+      }
+
+      .header-text {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .content {
+        padding: 20px;
+        color: #000;
+      }
+
+      .result {
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">
+      <div style="text-align: center">
+        <h1 style="color: #0072c6">Banco caja social</h1>
+        <h2 style="color: #0072c6">
+          Prueba técnica del proceso de selección para desarrollador Backend
+          Senior - Gerencia de Innovación
+        </h2>
+        <h3>Hola, ${clientName}</h3>
+        <p>Tu certificado de depósito a término fijo ha sido liquidado.</p>
+      </div>
+      <div class="result" style="text-align: center">
+        <p><b>Estos son tus intereses:</b></p>
+        <p>
+          Rendimiento Bruto: <span id="grossInterest"><b>${grossInterest} COP</b></span>
+        </p>
+        <p>
+          Retención en la Fuente:
+          <span id="withholdingTax"><b>${withholdingTax}  COP</b></span>
+        </p>
+        <p>
+          Valor Restante: <span id="remainingValue"><b>${remainingValue} COP</b></span>
+        </p>
+      </div>
+      <h2 style="text-align: center">
+        ¡Gracias por utilizar nuestros servicios!
+      </h2>
+    </div>
+  </body>
+</html>
+    `;
